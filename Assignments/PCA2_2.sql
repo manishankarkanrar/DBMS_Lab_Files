@@ -1,0 +1,17 @@
+DECLARE
+	A 	NUMBER(3) := 0;
+	B 	NUMBER(3) := 1;
+	C 	NUMBER(3) := 0;
+	I 	NUMBER(3) := 1;
+BEGIN
+	LOOP
+		DBMS_OUTPUT.PUT_LINE(A);
+		C:=A+B;
+		A:=B;
+		B:=C;
+		I:=I+1;
+		EXIT WHEN I>15;
+	END LOOP;
+END;
+/
+

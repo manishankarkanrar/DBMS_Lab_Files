@@ -1,0 +1,181 @@
+SQL> @D:\Assignment_1.sql
+
+Table created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+HOTELNO    HOTELNAME            CITY                STATUS                                                                                                                                              
+---------- -------------------- --------------- ----------                                                                                                                                              
+H001       TAJ BENGAL           KOLKATA                  5                                                                                                                                              
+H002       ASHOKA               AIRPORT                  3                                                                                                                                              
+H003       HINDUSTAN            KOLKATA                  3                                                                                                                                              
+H004       THE PARK             KOLKATA                  1                                                                                                                                              
+H005       HYATT                SALT LAKE                1                                                                                                                                              
+H006       ORCHID               KOLKATA                  3                                                                                                                                              
+
+6 rows selected.
+
+
+Table created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+ROOMNO     HOTELNO    BED              RATE TYP      FLOOR                                                                                                                                              
+---------- ---------- ---------- ---------- --- ----------                                                                                                                                              
+R001       H001       SINGLE           4200 AC           1                                                                                                                                              
+R002       H001       DOUBLE           2200 NAC          0                                                                                                                                              
+R003       H002       SOFA CUM         4800 AC           2                                                                                                                                              
+R004       H002       SINGLE           3000 NAC          3                                                                                                                                              
+R005       H003       DOUBLE           5000 AC           1                                                                                                                                              
+R006       H003       SINGLE           3000 NAC          4                                                                                                                                              
+R007       H003       SOFA CUM         4500 AC           0                                                                                                                                              
+R008       H004       SINGLE           2500 NAC          2                                                                                                                                              
+R009       H004       SOFA CUM         3500 AC           3                                                                                                                                              
+R010       H005       DOUBLE           3800 NAC          4                                                                                                                                              
+R011       H005       DOUBLE           4500 AC           1                                                                                                                                              
+
+ROOMNO     HOTELNO    BED              RATE TYP      FLOOR                                                                                                                                              
+---------- ---------- ---------- ---------- --- ----------                                                                                                                                              
+R012       H006       SINGLE           2700 NAC          2                                                                                                                                              
+
+12 rows selected.
+
+
+Table created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+GUESTNO    GUESTNAME            S GUESTID    GUESTADDRESS                NOMEMBER                                                                                                                       
+---------- -------------------- - ---------- ------------------------- ----------                                                                                                                       
+G001       NAREN KUMAR          M AODPN8133Q DELHI                              2                                                                                                                       
+G002       AMRITA ROY           F AEWPM7385L BANGALORE                          2                                                                                                                       
+G003       SAIKAT SINHA         M APWKL2532Q HYDERABAD                          2                                                                                                                       
+G004       KIRAN KHAN           F AWPOL253M  MUMBAI                             1                                                                                                                       
+G005       SUKUMAR DAS          M ARTP35629Q KOLKATA                            1                                                                                                                       
+G006       HARI HAR             M ADFPL4563Q HYDERABAD                          3                                                                                                                       
+
+6 rows selected.
+
+
+Table created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+BOOKI HOTELNO    GUESTNO    DATEFROM  DATETO    ROOMNO                                                                                                                                                  
+----- ---------- ---------- --------- --------- ----------                                                                                                                                              
+B0001 H001       G001       20-JAN-14 02-FEB-14 R002                                                                                                                                                    
+B0002 H001       G002       05-JAN-14 12-JAN-14 R002                                                                                                                                                    
+B0003 H002       G003       10-MAR-14 15-MAR-14 R003                                                                                                                                                    
+B0004 H003       G004       30-JAN-14 07-FEB-14 R007                                                                                                                                                    
+B0005 H004       G001       21-MAR-14 29-MAR-14 R008                                                                                                                                                    
+B0006 H004       G005       22-FEB-14 28-FEB-14 R008                                                                                                                                                    
+B0007 H004       G006       10-JAN-14           R009                                                                                                                                                    
+B0008 H005       G002       12-FEB-14 22-FEB-14 R010                                                                                                                                                    
+B0009 H005       G006       02-MAR-14 15-MAR-14 R010                                                                                                                                                    
+B0010 H006       G006       06-APR-14 18-APR-14 R012                                                                                                                                                    
+B0011 H006       G003       19-APR-14 21-APR-14 R012                                                                                                                                                    
+
+11 rows selected.
+
+SQL> spool off

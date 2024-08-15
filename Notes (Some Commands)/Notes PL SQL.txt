@@ -1,0 +1,193 @@
+SQL> DECLARE
+  2  X NUMBER:=1111;
+  3  BEGIN
+  4  IF X=1111 THEN
+  5  DBMS_OUTPUT.PUT_LINE('LOGIN SUCCESS');
+  6  END IF
+  7  END;
+  8  /
+END;
+*
+ERROR at line 7:
+ORA-06550: line 7, column 1:
+PLS-00103: Encountered the symbol "END" when expecting one of the following:
+;
+The symbol ";" was substituted for "END" to continue.
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  DECLARE
+  2  X NUMBER:=1111;
+  3  BEGIN
+  4  IF X=1111 THEN
+  5  DBMS_OUTPUT.PUT_LINE('LOGIN SUCCESS');
+  6  END IF;
+  7* END;
+SQL> /
+LOGIN SUCCESS
+
+PL/SQL procedure successfully completed.
+
+SQL> SET SERVEROUTPUT ON
+SQL> SE SQLPROMPT 'MSK >>>>> '
+SP2-0734: unknown command beginning "SE SQLPROM..." - rest of line ignored.
+SQL> SET SQLPROMPT 'MSK >>>>> '
+MSK >>>>> CD
+SP2-0042: unknown command "CD" - rest of line ignored.
+MSK >>>>> ED
+Wrote file afiedt.buf
+
+  1  DECLARE
+  2  X NUMBER:=1111;
+  3  BEGIN
+  4     IF X=1111 THEN
+  5             DBMS_OUTPUT.PUT_LINE('LOGIN SUCCESS');
+  6     ELSE
+  7             DBMS_OUTPUT.PUT_LINE('LOGIN UNSUCCESS');
+  8     END IF;
+  9* END;
+MSK >>>>> /
+LOGIN SUCCESS
+
+PL/SQL procedure successfully completed.
+
+MSK >>>>> ED
+Wrote file afiedt.buf
+
+  1  DECLARE
+  2  X NUMBER:=1111;
+  3  BEGIN
+  4     IF X=111 THEN
+  5             DBMS_OUTPUT.PUT_LINE('LOGIN SUCCESS');
+  6     ELSE
+  7             DBMS_OUTPUT.PUT_LINE('LOGIN UNSUCCESS');
+  8     END IF;
+  9* END;
+MSK >>>>> /
+LOGIN UNSUCCESS
+
+PL/SQL procedure successfully completed.
+
+MSK >>>>> ED
+Wrote file afiedt.buf
+
+  1  DECLARE
+  2  X NUMBER:=1111;
+  3  BEGIN
+  4     IF X=1111 THEN
+  5             DBMS_OUTPUT.PUT_LINE('LOGIN SUCCESSFULL :) ');
+  6     ELSE IF X<1111 THEN
+  7             DBMS_OUTPUT.PUT_LINE('GIVEN PIN IS LESS THAN ACTUAL PIN.');
+  8     ELSE IF X>1111 THEN
+  9             DBMS_OUTPUT.PUT_LINE('GIVEN PIN IS GREATER THAN ACTUAL PIN.');
+ 10     ELSE
+ 11             DBMS_OUTPUT.PUT_LINE('LOGIN UNSUCCESSFULL.');
+ 12     END IF;
+ 13* END;
+MSK >>>>> /
+END;
+   *
+ERROR at line 13:
+ORA-06550: line 13, column 4:
+PLS-00103: Encountered the symbol ";" when expecting one of the following:
+if
+
+
+MSK >>>>> ED
+Wrote file afiedt.buf
+
+  1  DECLARE
+  2  X NUMBER:=1111;
+  3  BEGIN
+  4     IF X=1111 THEN
+  5             DBMS_OUTPUT.PUT_LINE('LOGIN SUCCESSFULL :) ');
+  6     ELSEIF X<1111 THEN
+  7             DBMS_OUTPUT.PUT_LINE('GIVEN PIN IS LESS THAN ACTUAL PIN.');
+  8     ELSEIF X>1111 THEN
+  9             DBMS_OUTPUT.PUT_LINE('GIVEN PIN IS GREATER THAN ACTUAL PIN.');
+ 10     ELSE
+ 11             DBMS_OUTPUT.PUT_LINE('LOGIN UNSUCCESSFULL.');
+ 12     END IF;
+ 13* END;
+MSK >>>>> /
+        ELSEIF X<1111 THEN
+               *
+ERROR at line 6:
+ORA-06550: line 6, column 9:
+PLS-00103: Encountered the symbol "X" when expecting one of the following:
+:= . ( @ % ;
+ORA-06550: line 8, column 9:
+PLS-00103: Encountered the symbol "X" when expecting one of the following:
+:= . ( @ % ;
+ORA-06550: line 13, column 4:
+PLS-00103: Encountered the symbol ";" when expecting one of the following:
+if
+
+
+MSK >>>>> ED
+Wrote file afiedt.buf
+
+  1  DECLARE
+  2  X NUMBER:=1111;
+  3  BEGIN
+  4     IF X=1111 THEN
+  5             DBMS_OUTPUT.PUT_LINE('LOGIN SUCCESSFULL :) ');
+  6     ELSIF X<1111 THEN
+  7             DBMS_OUTPUT.PUT_LINE('GIVEN PIN IS LESS THAN ACTUAL PIN.');
+  8     ELSIF X>1111 THEN
+  9             DBMS_OUTPUT.PUT_LINE('GIVEN PIN IS GREATER THAN ACTUAL PIN.');
+ 10     ELSE
+ 11             DBMS_OUTPUT.PUT_LINE('LOGIN UNSUCCESSFULL.');
+ 12     END IF;
+ 13* END;
+MSK >>>>> /
+LOGIN SUCCESSFULL :)
+
+PL/SQL procedure successfully completed.
+
+MSK >>>>> ED
+Wrote file afiedt.buf
+
+  1  DECLARE
+  2  X NUMBER:=1110;
+  3  BEGIN
+  4     IF X=1111 THEN
+  5             DBMS_OUTPUT.PUT_LINE('LOGIN SUCCESSFULL :) ');
+  6     ELSIF X<1111 THEN
+  7             DBMS_OUTPUT.PUT_LINE('GIVEN PIN IS LESS THAN ACTUAL PIN.');
+  8     ELSIF X>1111 THEN
+  9             DBMS_OUTPUT.PUT_LINE('GIVEN PIN IS GREATER THAN ACTUAL PIN.');
+ 10     ELSE
+ 11             DBMS_OUTPUT.PUT_LINE('LOGIN UNSUCCESSFULL.');
+ 12     END IF;
+ 13* END;
+MSK >>>>> /
+GIVEN PIN IS LESS THAN ACTUAL PIN.
+
+PL/SQL procedure successfully completed.
+
+MSK >>>>> ED
+Wrote file afiedt.buf
+
+  1  DECLARE
+  2  X NUMBER:=1119;
+  3  BEGIN
+  4     IF X=1111 THEN
+  5             DBMS_OUTPUT.PUT_LINE('LOGIN SUCCESSFULL :) ');
+  6     ELSIF X<1111 THEN
+  7             DBMS_OUTPUT.PUT_LINE('GIVEN PIN IS LESS THAN ACTUAL PIN.');
+  8     ELSIF X>1111 THEN
+  9             DBMS_OUTPUT.PUT_LINE('GIVEN PIN IS GREATER THAN ACTUAL PIN.');
+ 10     ELSE
+ 11             DBMS_OUTPUT.PUT_LINE('LOGIN UNSUCCESSFULL.');
+ 12     END IF;
+ 13* END;
+MSK >>>>> /
+GIVEN PIN IS GREATER THAN ACTUAL PIN.
+
+PL/SQL procedure successfully completed.
+
+MSK >>>>>
+

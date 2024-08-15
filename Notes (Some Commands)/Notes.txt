@@ -1,0 +1,246 @@
+Insert into <Table-name> values (&v1,'&v2',&v3,&v4); //input from cmd
+
+/ --> To run again (Same as Upper Arrow)
+
+&V1 ---> Taking input from user ( select * from emp_agf where eno=&v1; )
+
+Aggregate Function/Group Function - Function that acts on set of values called Aggregate function .
+
+Single Row Function/Scaler Function- LENGTH() 
+SELECT LENGTH(ENAME) FROM EMP_AGF WHERE ENO=505 ;
+
+SELECT COUNT(*) "CNT" FROM EMP_AGF ; --Renaming the column
+SELECT COUNT(distinct DPTNO) AS "dept no" FROM EMP_AGF ;
+
+Numeric Function :- ABS()
+SELECT ABS(-25.25) FROM DUAL;
+
+POWER() :-
+SELECT POWER(2, 3) FROM DUAL;
+
+SELECT ROUND(15.123456, 3) FROM DUAL;
+ROUND(15.123456,3)
+------------------
+            15.123
+
+SQL> SELECT MOD(15.123456, 3) FROM DUAL;
+
+MOD(15.123456,3)
+----------------
+         .123456
+
+SQL> SELECT GREATEST(15.123456, 3) FROM DUAL;
+
+GREATEST(15.123456,3)
+---------------------
+            15.123456
+SQL> SELECT LOWER('MSK maNI') FROM DUAL;
+
+LOWER('MMSK maNI)
+-----------------
+msk mani
+
+SQL> SELECT INITCAP('MSK maNI') FROM DUAL;
+
+INITCAP(
+--------
+Msk Mani
+
+SQL> SELECT TRIM('     MSK maNI      ') FROM DUAL;
+
+TRIM('MS
+--------
+MSK maNI
+
+SQL> SELECT DPTNO, SUM(SALARY) FROM EMP_AGF GROUP BY DPTNO;
+//Add group by if non-aggregate function is present.(*)
+
+     DPTNO SUM(SALARY)
+---------- -----------
+       100      140000
+       102      130000
+       101      177800
+       103      145020
+
+SQL> SELECT DNAME, SUM(SALARY) FROM EMP_AGF, DEPT_AGF WHERE EMP_AGF.DPTNO = DEPT_AGF.DNO GROUP BY DNAME;
+
+DNAME      SUM(SALARY)
+---------- -----------
+APM             130000
+TT              145020
+CSE             140000
+IT              177800
+
+SQL> SELECT DNAME, SUM(SALARY) FROM EMP_AGF E, DEPT_AGF D WHERE E.DPTNO = D.DNO GROUP BY DNAME HAVING SUM(SALARY) > 20000;
+
+DNAME      SUM(SALARY)
+---------- -----------
+APM             130000
+TT              145020
+CSE             140000
+IT              177800
+
+//HAVING Claue (Written Exam)
+@ can be used with conjunction with GROUP BY () clause.
+@ imposed a condition on the GROUP BY() clause which further filters the groups created by the GROUP BY() Clause.
+   
+SQL> select empno, ename, deptno from employee24 e join department24 d using (deptno);
+
+     EMPNO ENAME                    DEPTNO
+---------- -------------------- ----------
+       200 AAA AA                      100
+       201 BBB BB                      100
+       202 CCC CC                      101
+       203 DDD DD                      102
+SQL> select * from employee24 e join department24 d using (deptno);
+
+    DEPTNO      EMPNO ENAME                JOB             MGRNO DNAME                LOC
+---------- ---------- -------------------- ---------- ---------- -------------------- ----------
+       100        200 AAA AA               ANALYST           200 INVENTORY            KOL
+       100        201 BBB BB               CLERK             200 INVENTORY            KOL
+       101        202 CCC CC               TESTER            201 FINANCE              MUMB
+       102        203 DDD DD               ENGINEER          202 HR                   HYBD
+
+SQL> select * from employee24 e , department24 d where e.deptno = d.deptno;
+
+     EMPNO ENAME                JOB             MGRNO     DEPTNO     DEPTNO DNAME                LOC
+---------- -------------------- ---------- ---------- ---------- ---------- -------------------- ----------
+       200 AAA AA               ANALYST           200        100        100 INVENTORY            KOL
+       201 BBB BB               CLERK             200        100        100 INVENTORY            KOL
+       202 CCC CC               TESTER            201        101        101 FINANCE              MUMB
+       203 DDD DD               ENGINEER          202        102        102 HR                   HYBD
+
+MSK >> SELECT * FROM EMPLOYEE24 E , DEPARTMENT24 D WHERE E.DEPTNO = D.DEPTNO(+); //LEFT OUTER JOIN
+
+     EMPNO ENAME                JOB             MGRNO     DEPTNO     DEPTNO DNAME                LOC
+---------- -------------------- ---------- ---------- ---------- ---------- -------------------- ----------
+       201 BBB BB               CLERK             200        100        100 INVENTORY            KOL
+       200 AAA AA               ANALYST           200        100        100 INVENTORY            KOL
+       202 CCC CC               TESTER            201        101        101 FINANCE              MUMB
+       203 DDD DD               ENGINEER          202        102        102 HR                   HYBD
+
+MSK >> SELECT * FROM EMPLOYEE24 E , DEPARTMENT24 D WHERE E.DEPTNO(+) = D.DEPTNO; //RIGHT OUTER JOIN
+
+     EMPNO ENAME                JOB             MGRNO     DEPTNO     DEPTNO DNAME                LOC
+---------- -------------------- ---------- ---------- ---------- ---------- -------------------- ----------
+       200 AAA AA               ANALYST           200        100        100 INVENTORY            KOL
+       201 BBB BB               CLERK             200        100        100 INVENTORY            KOL
+       202 CCC CC               TESTER            201        101        101 FINANCE              MUMB
+       203 DDD DD               ENGINEER          202        102        102 HR                   HYBD
+
+MSK >> SELECT * FROM EMPLOYEE_OTJ E LEFT OUTER JOIN FT_WORKS_OTJ F ON E.ENAME = F.ENAME;
+
+ENAME      STREET     CITY                 ENAME      BRANCH         SALARY
+---------- ---------- -------------------- ---------- ---------- ----------
+COYOTE     TOON       HOLLYWOOD            COYOTE     MESA             1500
+RABBIT     TUNNEL     CARROTVILLE          RABBIT     MESA             1300
+WILLIAMS   SEAVIEW    SEATTLE              WILLIAMS   REDMOND          1500
+SMITH      REVOLVER   DEATH VALLEY
+
+MSK >> SELECT * FROM EMPLOYEE_OTJ E RIGHT OUTER JOIN FT_WORKS_OTJ F ON E.ENAME = F.ENAME;
+
+ENAME      STREET     CITY                 ENAME      BRANCH         SALARY
+---------- ---------- -------------------- ---------- ---------- ----------
+COYOTE     TOON       HOLLYWOOD            COYOTE     MESA             1500
+RABBIT     TUNNEL     CARROTVILLE          RABBIT     MESA             1300
+WILLIAMS   SEAVIEW    SEATTLE              WILLIAMS   REDMOND          1500
+                                           GATES      REMOND           5300
+
+MSK >> SELECT * FROM EMPLOYEE_OTJ E FULL OUTER JOIN FT_WORKS_OTJ F ON E.ENAME = F.ENAME;
+
+ENAME      STREET     CITY                 ENAME      BRANCH         SALARY
+---------- ---------- -------------------- ---------- ---------- ----------
+COYOTE     TOON       HOLLYWOOD            COYOTE     MESA             1500
+RABBIT     TUNNEL     CARROTVILLE          RABBIT     MESA             1300
+WILLIAMS   SEAVIEW    SEATTLE              WILLIAMS   REDMOND          1500
+SMITH      REVOLVER   DEATH VALLEY
+                                           GATES      REMOND           5300
+
+VIEW : IS A SINGLE TABLE THAT IS DERIVED FROM OTHER TABLE. 
+
+SYNTAX :
+CREATE VIEW <VIEW NAME> AS SELECT COL1, COL2, COL3,.... FROM <BASE TABLE NAME> 
+WHERE <COLUMN NAME>=<CONDITION / EXPRESSION LIST>
+GROUP BY <CRITERIA>
+HAVING <PREDICATE>;
+
+CREATION OF A VIEW FROM MULTIPLE TABLE : 
+CREATE VIEW SAMPLEVW AS SELECT SID, SNAME, D.DID , D.LOC FROM STUDENT S, DEPARTMENT D WHERE S.DID = D.DID;
+
+SUB-QUERY IN CASE EXPRESSION:
+CASE WHEN ....... THEN ........ ELSE ....... END;
+SELECT DNO, DNAME, (CASE WHEN DNO IN (SELECT DPTNO FROM EMP_AGF) THEN 'USED' ELSE 'NOT USED' END) "STATUS" FROM DEPT_AGF;
+
+SELECT MIN(ROWID) FROM TESTTAB GROUP BY ID, NAME;
+
+CREATE SEQUENCE TEST_SQ
+  2  INCREMENT BY 1
+  3  START WITH 1
+  4  MAXVALUE 100;
+
+
+SQL> SELECT TEST_SQ.NEXTVAL FROM DUAL;
+
+   NEXTVAL
+----------
+         1
+
+SQL> SELECT TEST_SQ.NEXTVAL FROM DUAL;
+
+   NEXTVAL
+----------
+         2
+
+SQL> SELECT TEST_SQ.CURRVAL FROM DUAL;
+
+   CURRVAL
+----------
+         2
+
+SQL> SELECT TEST_SQ.CURRVAL FROM DUAL;
+
+   CURRVAL
+----------
+         2
+
+SQL> SELECT 'D'||TEST_SQ.NEXTVAL AS PK FROM DUAL;
+
+PK
+-----------------------------------------
+D4
+
+SQL> CREATE SEQUENCE TEST_SQ1
+  2  INCREMENT BY 1
+  3  START WITH 10
+  4  MAXVALUE 30
+  5  CYCLE;
+
+Sequence created.
+
+ INSERT INTO TEST_TAB VALUES('D'||TEST_SQ.NEXTVAL, 'MANI');
+
+CONCEPT OF COMMIT AND ROLLBACK WITH SEQUENCES.
+
+SQL> SELECT TEST_SQ2.NEXTVAL FROM DUAL;
+
+   NEXTVAL
+----------
+        16
+
+SQL> DROP SEQUENCE TEST_SQ1;
+
+Sequence dropped.
+
+SQL> ALTER SEQUENCE TEST_SQ INCREMENT BY 2;
+
+Sequence altered.
+
+SQL> ALTER SEQUENCE TEST_SQ INCREMENT BY 3 MAXVALUE 200;
+
+Sequence altered.
+
+PLSQL ASSIGNMENT
+WRITE PLSQL CODE THAT WILL FIND MAXIMUM OF TWO NUMBERS AND THAT VALUE WILL BE TAKEN BY USER.
+
+WRITE PLSQL CODE To show first 10 fibo numbers using the loop (Simple) .
+

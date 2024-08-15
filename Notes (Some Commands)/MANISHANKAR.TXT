@@ -1,0 +1,144 @@
+DBMS/MANISHANKAR/SQL > @D:\FINAL.SQL
+
+Sequence created.
+
+
+Table created.
+
+ Name                                                                                                  Null?    Type
+ ----------------------------------------------------------------------------------------------------- -------- --------------------------------------------------------------------
+ DEPTID                                                                                                NOT NULL VARCHAR2(5)
+ DNAME                                                                                                 NOT NULL VARCHAR2(15)
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+DEPTI DNAME                                                                                                                                                                         
+----- ---------------                                                                                                                                                               
+D1    SALES                                                                                                                                                                         
+D2    MARKETING                                                                                                                                                                     
+D3    FINANCE                                                                                                                                                                       
+
+
+Table created.
+
+ Name                                                                                                  Null?    Type
+ ----------------------------------------------------------------------------------------------------- -------- --------------------------------------------------------------------
+ EID                                                                                                   NOT NULL NUMBER(3)
+ ENAME                                                                                                          VARCHAR2(15)
+ DEPTID                                                                                                         VARCHAR2(5)
+ DESIGNATION                                                                                                    VARCHAR2(10)
+ SALARY                                                                                                         NUMBER(6)
+ DOJ                                                                                                            DATE
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+       EID ENAME           DEPTI DESIGNATIO     SALARY DOJ                                                                                                                          
+---------- --------------- ----- ---------- ---------- ---------                                                                                                                    
+       101 SUDHA           D2    CLERK           20000 01-APR-10                                                                                                                    
+       102 DAVID           D1    MANAGER         50000 18-FEB-18                                                                                                                    
+       103 PREETHI         D3    CLERK           35000 13-JUN-11                                                                                                                    
+       104 KIRAN           D1    SALESMAN        20000 07-MAR-14                                                                                                                    
+       105 MEENAL          D2    CLERK           50000 09-DEC-11                                                                                                                    
+       106 SUNITHA         D3    MANAGER         60000 25-SEP-18                                                                                                                    
+       107 AKHIL           D3    CLERK           25000 14-FEB-16                                                                                                                    
+       108 SUSHMA          D2    MANAGER         45000 31-JAN-12                                                                                                                    
+
+8 rows selected.
+
+
+ENAME           DESIGNATIO                                                                                                                                                          
+--------------- ----------                                                                                                                                                          
+DAVID           MANAGER                                                                                                                                                             
+MEENAL          CLERK                                                                                                                                                               
+SUNITHA         MANAGER                                                                                                                                                             
+SUSHMA          MANAGER                                                                                                                                                             
+
+
+DNAME           ENAME           DESIGNATIO     SALARY                                                                                                                               
+--------------- --------------- ---------- ----------                                                                                                                               
+FINANCE         AKHIL           CLERK           25000                                                                                                                               
+FINANCE         PREETHI         CLERK           35000                                                                                                                               
+FINANCE         SUNITHA         MANAGER         60000                                                                                                                               
+MARKETING       SUDHA           CLERK           20000                                                                                                                               
+MARKETING       SUSHMA          MANAGER         45000                                                                                                                               
+MARKETING       MEENAL          CLERK           50000                                                                                                                               
+SALES           KIRAN           SALESMAN        20000                                                                                                                               
+SALES           DAVID           MANAGER         50000                                                                                                                               
+
+8 rows selected.
+
+
+no rows selected
+
+
+ENAME           DESIGNATIO                                                                                                                                                          
+--------------- ----------                                                                                                                                                          
+DAVID           MANAGER                                                                                                                                                             
+
+
+       EID ENAME           DEPTI EXPERIENCE                                                                                                                                         
+---------- --------------- ----- ----------                                                                                                                                         
+       101 SUDHA           D2            14                                                                                                                                         
+       102 DAVID           D1             6                                                                                                                                         
+       103 PREETHI         D3            13                                                                                                                                         
+       104 KIRAN           D1            10                                                                                                                                         
+       105 MEENAL          D2            13                                                                                                                                         
+       106 SUNITHA         D3             6                                                                                                                                         
+       107 AKHIL           D3             8                                                                                                                                         
+       108 SUSHMA          D2            12                                                                                                                                         
+
+8 rows selected.
+
+DBMS/MANISHANKAR/SQL > @D:\PLSQL_FIN.SQL
+EVEN NUMBERS ARE : -                                                                                                                                                                
+20                                                                                                                                                                                  
+22                                                                                                                                                                                  
+24                                                                                                                                                                                  
+26                                                                                                                                                                                  
+28                                                                                                                                                                                  
+30                                                                                                                                                                                  
+32                                                                                                                                                                                  
+34                                                                                                                                                                                  
+36                                                                                                                                                                                  
+38                                                                                                                                                                                  
+40                                                                                                                                                                                  
+42                                                                                                                                                                                  
+44                                                                                                                                                                                  
+46                                                                                                                                                                                  
+48                                                                                                                                                                                  
+50                                                                                                                                                                                  
+
+PL/SQL procedure successfully completed.
+
+DBMS/MANISHANKAR/SQL > SPOOL OFF

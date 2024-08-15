@@ -1,0 +1,782 @@
+SQL> DESC Dual;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DUMMY                                              VARCHAR2(1)
+
+SQL> select * from Dual;
+
+D                                                                               
+-                                                                               
+X                                                                               
+
+SQL> select 2+2 from Dual;
+
+       2+2                                                                      
+----------                                                                      
+         4                                                                      
+
+SQL> select 2+2 as SUM from Dual;
+
+       SUM                                                                      
+----------                                                                      
+         4                                                                      
+
+SQL> select Extract(day from sysdate) DAY from Dual;
+
+       DAY                                                                      
+----------                                                                      
+         7                                                                      
+
+SQL> set line 180
+SQL> @D:\PCA1.sql
+DROP TABLE DEPARTMENT
+           *
+ERROR at line 1:
+ORA-02449: unique/primary keys in table referenced by foreign keys 
+
+
+
+Table dropped.
+
+CREATE TABLE DEPARTMENT(
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+)
+*
+ERROR at line 14:
+ORA-00904: : invalid identifier 
+
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+INSERT INTO STUDENT VALUES ('S1001', 'MANISH GUPTA', 23, 'M', 'KOLKATA', 7908479709, 'D1002')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1004', 'RAHUL DAS', 19, 'M', 'SERAMPORE', 9144867009, 'D1004')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1007', 'SWETA KUMARI', 25, 'F', 'HOWRAH', 9144679868, 'D1001')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1003', 'AYAN SEN', 22, 'M', 'HOOGHLY', 6789078789, 'D1003')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1005', 'MINA ROY', 20, 'F', 'KOLKATA', 7908677689, 'D1002')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+no rows selected
+
+FROM STUDENT
+     *
+ERROR at line 2:
+ORA-00942: table or view does not exist 
+
+
+SQL> @D:\PCA1.sql
+DROP TABLE DEPARTMENT CASCADE CONTRAINTS
+                              *
+ERROR at line 1:
+ORA-00905: missing keyword 
+
+
+DROP TABLE STUDENT
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+CREATE TABLE DEPARTMENT(
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+)
+*
+ERROR at line 14:
+ORA-00904: : invalid identifier 
+
+
+INSERT INTO DEPARTMENT VALUES ('D1001', 'CSE', 'KOLKATA', 60)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (GCETTS.PK_100) violated 
+
+
+INSERT INTO DEPARTMENT VALUES ('D1002', 'IT', 'HOWRAH' , 55)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (GCETTS.PK_100) violated 
+
+
+INSERT INTO DEPARTMENT VALUES ('D1003', 'APM', 'SERAMPORE', 65)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (GCETTS.PK_100) violated 
+
+
+INSERT INTO DEPARTMENT VALUES ('D1004', 'TT', 'SERAMPORE', 55)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (GCETTS.PK_100) violated 
+
+
+INSERT INTO STUDENT VALUES ('S1001', 'MANISH GUPTA', 23, 'M', 'KOLKATA', 7908479709, 'D1002')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1004', 'RAHUL DAS', 19, 'M', 'SERAMPORE', 9144867009, 'D1004')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1007', 'SWETA KUMARI', 25, 'F', 'HOWRAH', 9144679868, 'D1001')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1003', 'AYAN SEN', 22, 'M', 'HOOGHLY', 6789078789, 'D1003')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1005', 'MINA ROY', 20, 'F', 'KOLKATA', 7908677689, 'D1002')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+no rows selected
+
+FROM STUDENT
+     *
+ERROR at line 2:
+ORA-00942: table or view does not exist 
+
+
+SQL> @D:\PCA1.sql
+
+Table dropped.
+
+DROP TABLE STUDENT
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+Table created.
+
+)
+*
+ERROR at line 14:
+ORA-00904: : invalid identifier 
+
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+INSERT INTO STUDENT VALUES ('S1001', 'MANISH GUPTA', 23, 'M', 'KOLKATA', 7908479709, 'D1002')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1004', 'RAHUL DAS', 19, 'M', 'SERAMPORE', 9144867009, 'D1004')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1007', 'SWETA KUMARI', 25, 'F', 'HOWRAH', 9144679868, 'D1001')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1003', 'AYAN SEN', 22, 'M', 'HOOGHLY', 6789078789, 'D1003')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1005', 'MINA ROY', 20, 'F', 'KOLKATA', 7908677689, 'D1002')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+no rows selected
+
+FROM STUDENT
+     *
+ERROR at line 2:
+ORA-00942: table or view does not exist 
+
+
+SQL> @D:\PCA1.sql
+DROP TABLE STUDENT
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+Table dropped.
+
+
+Table created.
+
+)
+*
+ERROR at line 14:
+ORA-00904: : invalid identifier 
+
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+INSERT INTO STUDENT VALUES ('S1001', 'MANISH GUPTA', 23, 'M', 'KOLKATA', 7908479709, 'D1002')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1004', 'RAHUL DAS', 19, 'M', 'SERAMPORE', 9144867009, 'D1004')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1007', 'SWETA KUMARI', 25, 'F', 'HOWRAH', 9144679868, 'D1001')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1003', 'AYAN SEN', 22, 'M', 'HOOGHLY', 6789078789, 'D1003')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1005', 'MINA ROY', 20, 'F', 'KOLKATA', 7908677689, 'D1002')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+no rows selected
+
+FROM STUDENT
+     *
+ERROR at line 2:
+ORA-00942: table or view does not exist 
+
+
+SQL> @D:\PCA1.sql
+CREATE TABLE DEPARTMENT(
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+)
+*
+ERROR at line 14:
+ORA-00904: : invalid identifier 
+
+
+INSERT INTO DEPARTMENT VALUES ('D1001', 'CSE', 'KOLKATA', 60)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (GCETTS.PK_100) violated 
+
+
+INSERT INTO DEPARTMENT VALUES ('D1002', 'IT', 'HOWRAH' , 55)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (GCETTS.PK_100) violated 
+
+
+INSERT INTO DEPARTMENT VALUES ('D1003', 'APM', 'SERAMPORE', 65)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (GCETTS.PK_100) violated 
+
+
+INSERT INTO DEPARTMENT VALUES ('D1004', 'TT', 'SERAMPORE', 55)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (GCETTS.PK_100) violated 
+
+
+INSERT INTO STUDENT VALUES ('S1001', 'MANISH GUPTA', 23, 'M', 'KOLKATA', 7908479709, 'D1002')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1004', 'RAHUL DAS', 19, 'M', 'SERAMPORE', 9144867009, 'D1004')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1007', 'SWETA KUMARI', 25, 'F', 'HOWRAH', 9144679868, 'D1001')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1003', 'AYAN SEN', 22, 'M', 'HOOGHLY', 6789078789, 'D1003')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1005', 'MINA ROY', 20, 'F', 'KOLKATA', 7908677689, 'D1002')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+no rows selected
+
+FROM STUDENT
+     *
+ERROR at line 2:
+ORA-00942: table or view does not exist 
+
+
+SQL> @D:\PCA1.sql
+DROP TABLE STUDENT
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+Table dropped.
+
+
+Table created.
+
+)
+*
+ERROR at line 14:
+ORA-00904: : invalid identifier 
+
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+INSERT INTO STUDENT VALUES ('S1001', 'MANISH GUPTA', 23, 'M', 'KOLKATA', 7908479709, 'D1002')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1004', 'RAHUL DAS', 19, 'M', 'SERAMPORE', 9144867009, 'D1004')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1007', 'SWETA KUMARI', 25, 'F', 'HOWRAH', 9144679868, 'D1001')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1003', 'AYAN SEN', 22, 'M', 'HOOGHLY', 6789078789, 'D1003')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1005', 'MINA ROY', 20, 'F', 'KOLKATA', 7908677689, 'D1002')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+no rows selected
+
+FROM STUDENT
+     *
+ERROR at line 2:
+ORA-00942: table or view does not exist 
+
+
+SQL> DROP TABLE DEPARTMENT CASCADE CONSTRAINTS;
+
+Table dropped.
+
+SQL> DROP TABLE STUDENT CASCADE CONSTRAINTS;
+DROP TABLE STUDENT CASCADE CONSTRAINTS
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> DROP TABLE STUDENT;
+DROP TABLE STUDENT
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> @D:\PCA1.sql
+
+Table created.
+
+)
+*
+ERROR at line 14:
+ORA-00904: : invalid identifier 
+
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+INSERT INTO STUDENT VALUES ('S1001', 'MANISH GUPTA', 23, 'M', 'KOLKATA', 7908479709, 'D1002')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1004', 'RAHUL DAS', 19, 'M', 'SERAMPORE', 9144867009, 'D1004')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1007', 'SWETA KUMARI', 25, 'F', 'HOWRAH', 9144679868, 'D1001')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1003', 'AYAN SEN', 22, 'M', 'HOOGHLY', 6789078789, 'D1003')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1005', 'MINA ROY', 20, 'F', 'KOLKATA', 7908677689, 'D1002')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+no rows selected
+
+FROM STUDENT
+     *
+ERROR at line 2:
+ORA-00942: table or view does not exist 
+
+
+SQL> @D:\PCA1.sql
+CREATE TABLE DEPARTMENT(
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+)
+*
+ERROR at line 14:
+ORA-00904: : invalid identifier 
+
+
+INSERT INTO DEPARTMENT VALUES ('D1001', 'CSE', 'KOLKATA', 60)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (GCETTS.PK_100) violated 
+
+
+INSERT INTO DEPARTMENT VALUES ('D1002', 'IT', 'HOWRAH' , 55)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (GCETTS.PK_100) violated 
+
+
+INSERT INTO DEPARTMENT VALUES ('D1003', 'APM', 'SERAMPORE', 65)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (GCETTS.PK_100) violated 
+
+
+INSERT INTO DEPARTMENT VALUES ('D1004', 'TT', 'SERAMPORE', 55)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (GCETTS.PK_100) violated 
+
+
+INSERT INTO STUDENT VALUES ('S1001', 'MANISH GUPTA', 23, 'M', 'KOLKATA', 7908479709, 'D1002')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1004', 'RAHUL DAS', 19, 'M', 'SERAMPORE', 9144867009, 'D1004')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1007', 'SWETA KUMARI', 25, 'F', 'HOWRAH', 9144679868, 'D1001')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1003', 'AYAN SEN', 22, 'M', 'HOOGHLY', 6789078789, 'D1003')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1005', 'MINA ROY', 20, 'F', 'KOLKATA', 7908677689, 'D1002')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+no rows selected
+
+FROM STUDENT
+     *
+ERROR at line 2:
+ORA-00942: table or view does not exist 
+
+
+SQL> DROP TABLE STUDENT;
+DROP TABLE STUDENT
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> DROP TABLE DEPARTMENT;
+
+Table dropped.
+
+SQL> DROP TABLE STUDENT;
+DROP TABLE STUDENT
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> @D:\PCA1.sql
+
+Table created.
+
+)
+*
+ERROR at line 14:
+ORA-00904: : invalid identifier 
+
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+INSERT INTO STUDENT VALUES ('S1001', 'MANISH GUPTA', 23, 'M', 'KOLKATA', 7908479709, 'D1002')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1004', 'RAHUL DAS', 19, 'M', 'SERAMPORE', 9144867009, 'D1004')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1007', 'SWETA KUMARI', 25, 'F', 'HOWRAH', 9144679868, 'D1001')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1003', 'AYAN SEN', 22, 'M', 'HOOGHLY', 6789078789, 'D1003')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1005', 'MINA ROY', 20, 'F', 'KOLKATA', 7908677689, 'D1002')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+no rows selected
+
+FROM STUDENT
+     *
+ERROR at line 2:
+ORA-00942: table or view does not exist 
+
+
+SQL> @D:\PCA1.sql
+DROP TABLE STUDENT
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+Table dropped.
+
+
+Table created.
+
+)
+*
+ERROR at line 14:
+ORA-00904: : invalid identifier 
+
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+INSERT INTO STUDENT VALUES ('S1001', 'MANISH GUPTA', 23, 'M', 'KOLKATA', 7908479709, 'D1002')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1004', 'RAHUL DAS', 19, 'M', 'SERAMPORE', 9144867009, 'D1004')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1007', 'SWETA KUMARI', 25, 'F', 'HOWRAH', 9144679868, 'D1001')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1003', 'AYAN SEN', 22, 'M', 'HOOGHLY', 6789078789, 'D1003')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+INSERT INTO STUDENT VALUES ('S1005', 'MINA ROY', 20, 'F', 'KOLKATA', 7908677689, 'D1002')
+            *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+no rows selected
+
+FROM STUDENT
+     *
+ERROR at line 2:
+ORA-00942: table or view does not exist 
+
+
+SQL> SPOOL OFF
